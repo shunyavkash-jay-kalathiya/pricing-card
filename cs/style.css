@@ -155,7 +155,7 @@ body {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 639px) {
   .pricing-card-wrep {
     width: 100%;
     padding-inline: 10px;
