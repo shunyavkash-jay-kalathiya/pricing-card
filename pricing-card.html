@@ -15,17 +15,18 @@
     <main>
         <section class="sec-padding">
             <div class="container">
-                <div class="switch-content">
-                    <h6 class="switch-tag">Monthly</h6>
+                <form>
+                        <div class="switch-content">
+                    <label class="switch-tag" for="switch">Yearly</label>
                     <label class="switch">
-                        <input type="checkbox" class="switch-box">
+                        <input type="checkbox" class="switch-box" checked id="switch">
                         <span class="slider"></span>
                     </label>
-                    <h6 class="switch-tag">Yearly</h6>
+                    <label class="switch-tag" for="switch">Monthly</label>
                 </div>
-                <div class="pricing-wrapper yearly">
-
-                    <div class="pricing-card-wrep">
+                </form>
+                <div class="pricing-wrapper">
+                    <div class="pricing-card-wrep monthly">
                         <div class="pricing-tag">
                             <h3 class="pricing-number">$150</h3>
                             <h4 class="pricing-life">Per Month</h4>
@@ -53,7 +54,7 @@
                         </div>
 
                     </div>
-                    <div class="pricing-card-wrep popular-pricing">
+                    <div class="pricing-card-wrep popular-pricing monthly">
                         <h4 class="popular-tag">Popular</h4>
                         <div class="pricing-tag">
                             <h3 class="pricing-number">$180</h3>
@@ -78,11 +79,11 @@
                                 <li class="pricing-list-item">0.6% 3rd-party payment providers</li>
                                 <li class="pricing-list-item">15 additional staff accounts</li>
                             </ul>
-                            <a href="#" class="btn-primary">Start 7-day free trial</a>
+                            <a href="#" class="btn-primary pricing-card-btn">Start 7-day free trial</a>
                         </div>
 
                     </div>
-                    <div class="pricing-card-wrep">
+                    <div class="pricing-card-wrep monthly">
                         <div class="pricing-tag">
                             <h3 class="pricing-number">$200</h3>
                             <h4 class="pricing-life">Per Month</h4>
@@ -110,10 +111,8 @@
                         </div>
 
                     </div>
-                </div>
-                <div class="pricing-wrapper monthly " style="display: none;">
 
-                    <div class="pricing-card-wrep">
+                    <div class="pricing-card-wrep yearly">
                         <div class="pricing-tag">
                             <h3 class="pricing-number">$130</h3>
                             <h4 class="pricing-life">Per yearly</h4>
@@ -141,7 +140,7 @@
                         </div>
 
                     </div>
-                    <div class="pricing-card-wrep popular-pricing">
+                    <div class="pricing-card-wrep popular-pricing yearly">
                         <h4 class="popular-tag">Popular</h4>
                         <div class="pricing-tag">
                             <h3 class="pricing-number">$160</h3>
@@ -166,11 +165,11 @@
                                 <li class="pricing-list-item">0.6% 3rd-party payment providers</li>
                                 <li class="pricing-list-item">15 additional staff accounts</li>
                             </ul>
-                            <a href="#" class="btn-primary">Start 7-day free trial</a>
+                            <a href="#" class="btn-primary pricing-card-btn">Start 7-day free trial</a>
                         </div>
 
                     </div>
-                    <div class="pricing-card-wrep">
+                    <div class="pricing-card-wrep yearly">
                         <div class="pricing-tag">
                             <h3 class="pricing-number">$200</h3>
                             <h4 class="pricing-life">Per yearly</h4>
@@ -199,10 +198,10 @@
 
                     </div>
                 </div>
+            
             </div>
         </section>
-
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script>
             $(document).ready(function () {
                 $('.switch-box').on('change', function () {
@@ -215,6 +214,24 @@
                     }
                 });
             });
+        </script> -->
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+                const switchBoxes = document.querySelectorAll('.switch-box');
+
+                switchBoxes.forEach(function (switchBox) {
+                    switchBox.addEventListener('change', function () {
+                        if (switchBox.checked) {
+                            document.querySelectorAll('.monthly').forEach(el => el.style.display = 'block');
+                            document.querySelectorAll('.yearly').forEach(el => el.style.display = 'none');
+                        } else {
+                            document.querySelectorAll('.monthly').forEach(el => el.style.display = 'none');
+                            document.querySelectorAll('.yearly').forEach(el => el.style.display = 'block');
+                        }
+                    });
+                });
+            });
+
         </script>
     </main>
 </body>
