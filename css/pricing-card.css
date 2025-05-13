@@ -98,6 +98,7 @@ input:checked + .slider:before {
 .yearly{
   display: none;
 }
+
 .pricing-wrapper {
   padding-top:80px;
   display: grid;
