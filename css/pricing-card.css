@@ -61,12 +61,13 @@ body {
   z-index: -1;
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out,
     visibility 0.5s ease-in-out;
-  --s: 10px; /* control the size*/
+  --s: 8px; /* control the size*/
   --c1: #051624;
   --c2: #000000;
   background: linear-gradient(135deg, #0000 18.75%, var(--c1) 0 31.25%, #0000 0),
     repeating-linear-gradient(45deg, var(--c1) -6.25% 6.25%, var(--c2) 0 18.75%);
   background-size: var(--s) var(--s);
+  /* background-size: cover; */
 }
 
 .pricing-card-wrep:hover .pricing-card::after {
@@ -101,6 +102,11 @@ body {
   border-radius: 8px;
   text-align: center;
   width: fit-content;
+  transition: clip-path 0.5s ease-in-out;
+  clip-path: polygon(0 0, 100% 0, 100% 69%, 50% 100%, 0 69%);
+}
+
+.pricing-card-wrep:hover .pricing-tag {
   clip-path: polygon(0 0, 100% 0, 100% 69%, 50% 100%, 0 69%);
 }
 
