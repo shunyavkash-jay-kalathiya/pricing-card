@@ -322,6 +322,7 @@ input:checked + .slider:before {
 @media (max-width: 1023px) {
   .pricing-wrapper {
     grid-template-columns: repeat(2, 1fr);
+    row-gap:80px;
   }
   .pricing-tag {
     top: -22px;
