@@ -15,7 +15,16 @@
     <main>
         <section class="sec-padding">
             <div class="container">
-                <div class="pricing-wrapper">
+                <div class="switch-content">
+                    <h6 class="switch-tag">Monthly</h6>
+                    <label class="switch">
+                        <input type="checkbox" class="switch-box">
+                        <span class="slider"></span>
+                    </label>
+                    <h6 class="switch-tag">Yearly</h6>
+                </div>
+                <div class="pricing-wrapper monthly">
+
                     <div class="pricing-card-wrep">
                         <div class="pricing-tag">
                             <h3 class="pricing-number">$150</h3>
@@ -102,10 +111,111 @@
 
                     </div>
                 </div>
+                <div class="pricing-wrapper yearly">
+
+                    <div class="pricing-card-wrep">
+                        <div class="pricing-tag">
+                            <h3 class="pricing-number">$130</h3>
+                            <h4 class="pricing-life">Per Month</h4>
+                        </div>
+                        <div class="pricing-card">
+                            <div class="card-type-wrepr">
+                                <div class="card-type-icon">
+                                    <img src="./images/thunderbold.svg" alt="">
+                                </div>
+                                <h4 class="card-type">Basic</h4>
+                            </div>
+                            <div class="richtext pricing-desc">
+                                <p>
+                                    Combining multiple communication channels into one easy-to-manage system.
+                                </p>
+                            </div>
+                            <ul class="pricing-list">
+                                <li class="pricing-list-item">Custom reports and analytics</li>
+                                <li class="pricing-list-item">10 inventory locations</li>
+                                <li class="pricing-list-item">Enhanced 24/7 chat support</li>
+                                <li class="pricing-list-item">0.6% 3rd-party payment providers</li>
+                                <li class="pricing-list-item">15 additional staff accounts</li>
+                            </ul>
+                            <a href="#" class="btn-primary">Start 7-day free trial</a>
+                        </div>
+
+                    </div>
+                    <div class="pricing-card-wrep popular-pricing">
+                        <h4 class="popular-tag">Popular</h4>
+                        <div class="pricing-tag">
+                            <h3 class="pricing-number">$160</h3>
+                            <h4 class="pricing-life">Per Month</h4>
+                        </div>
+                        <div class="pricing-card">
+                            <div class="card-type-wrepr">
+                                <div class="card-type-icon">
+                                    <img src="./images/roket-white.svg" alt="">
+                                </div>
+                                <h4 class="card-type">Startup</h4>
+                            </div>
+                            <div class="richtext pricing-desc">
+                                <p>
+                                    Combining multiple communication channels into one easy-to-manage system.
+                                </p>
+                            </div>
+                            <ul class="pricing-list">
+                                <li class="pricing-list-item">Custom reports and analytics</li>
+                                <li class="pricing-list-item">10 inventory locations</li>
+                                <li class="pricing-list-item">Enhanced 24/7 chat support</li>
+                                <li class="pricing-list-item">0.6% 3rd-party payment providers</li>
+                                <li class="pricing-list-item">15 additional staff accounts</li>
+                            </ul>
+                            <a href="#" class="btn-primary">Start 7-day free trial</a>
+                        </div>
+
+                    </div>
+                    <div class="pricing-card-wrep">
+                        <div class="pricing-tag">
+                            <h3 class="pricing-number">$200</h3>
+                            <h4 class="pricing-life">Per Month</h4>
+                        </div>
+                        <div class="pricing-card">
+                            <div class="card-type-wrepr">
+                                <div class="card-type-icon">
+                                    <img src="./images/fire.svg" alt="">
+                                </div>
+                                <h4 class="card-type">Elite Plan</h4>
+                            </div>
+                            <div class="richtext pricing-desc">
+                                <p>
+                                    Combining multiple communication channels into one easy-to-manage system.
+                                </p>
+                            </div>
+                            <ul class="pricing-list">
+                                <li class="pricing-list-item">Custom reports and analytics</li>
+                                <li class="pricing-list-item">10 inventory locations</li>
+                                <li class="pricing-list-item">Enhanced 24/7 chat support</li>
+                                <li class="pricing-list-item">0.6% 3rd-party payment providers</li>
+                                <li class="pricing-list-item">15 additional staff accounts</li>
+                            </ul>
+                            <a href="#" class="btn-primary">Start 7-day free trial</a>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </section>
 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.switch-box').on('change', function () {
+                    if ($(this).is(':checked')) {
+                        $('.monthly').show();
+                        $('.yearly').hide();
+                    } else {
+                        $('.monthly').hide();
+                        $('.yearly').show();
+                    }
+                });
+            });
+        </script>
     </main>
 </body>
 
