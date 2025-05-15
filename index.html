@@ -320,6 +320,14 @@
 
         <section class="sec-padding">
             <div class="container">
+                <div class="switch-content">
+                    <h6 class="switch-tag">Monthly</h6>
+                    <label class="switch">
+                        <input type="checkbox" class="switch-box">
+                        <span class="slider"></span>
+                    </label>
+                    <h6 class="switch-tag">Yearly</h6>
+                </div>
                 <div class="pricing-grid">
                     <div class="pricing-card-3">
                         <div class="pricing-card-top">
@@ -329,13 +337,26 @@
                                 </div>
                                 <h4 class="card-type-3">Free Plan</h4>
                             </div>
-                            <div class="pricing-wrepr-3">
-                                <h3 class="pricing-nunber-3">
-                                    $0
-                                </h3>
-                                <div>
-                                    <h6 class="pricing-text">Per user</h6>
-                                    <h6 class="pricing-text">billed monthly</h6>
+                            <div class="pricing-info">
+                                <div class="pricing-tags">
+                                    <div class="pricing-wrepr-3">
+                                        <h3 class="pricing-nunber-3">
+                                            $0
+                                        </h3>
+                                        <div>
+                                            <h6 class="pricing-text">Per user</h6>
+                                            <h6 class="pricing-text">billed monthly</h6>
+                                        </div>
+                                    </div>
+                                    <div class="pricing-wrepr-3">
+                                        <h3 class="pricing-nunber-3">
+                                            $10
+                                        </h3>
+                                        <div>
+                                            <h6 class="pricing-text">Per user</h6>
+                                            <h6 class="pricing-text">billed monthly</h6>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <a href="#" class="btn-primary">Get Started for free</a>
@@ -437,6 +458,7 @@
                 </div>
             </div>
         </section>
+
         <section class="sec-padding">
             <div class="container">
                 <table class="pricing-table ">
@@ -464,15 +486,30 @@
     </main>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $('.switch-box').on('change', function () {
-                if ($(this).is(':checked')) {
-                    $('.monthly').show();
-                    $('.yearly').hide();
-                } else {
-                    $('.monthly').hide();
-                    $('.yearly').show();
-                }
+        document.addEventListener('DOMContentLoaded', function () {
+            const switchBoxes = document.querySelectorAll('.switch-box');
+
+            switchBoxes.forEach(function (switchBox) {
+                switchBox.addEventListener('change', function () {
+                    // Find the related .pricing-wrapper-tag container
+                    const wrapper = switchBox.closest('form').nextElementSibling;
+
+                    if (!wrapper || !wrapper.classList.contains('pricing-wrapper-tag')) return;
+
+                    const monthlyItems = wrapper.querySelectorAll('.monthly');
+                    const yearlyItems = wrapper.querySelectorAll('.yearly');
+
+                    if (switchBox.checked) {
+                        monthlyItems.forEach(el => el.style.display = 'block');
+                        yearlyItems.forEach(el => el.style.display = 'none');
+                    } else {
+                        monthlyItems.forEach(el => el.style.display = 'none');
+                        yearlyItems.forEach(el => el.style.display = 'block');
+                    }
+                });
+
+                // Optional: Trigger initial state based on default checkbox
+                switchBox.dispatchEvent(new Event('change'));
             });
         });
     </script>

@@ -217,6 +217,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 15px;
+  margin-bottom: 50px;
 }
 
 .slider {
@@ -461,12 +462,22 @@ input:checked + .slider:before {
 .pricing-wrepr-3 {
   display: flex;
   gap: 10px;
-  margin-bottom: 28px;
+  margin-bottom: 14px;
 }
 
 .pricing-nunber-3 {
   font-size: 44px;
   line-height: 1;
+}
+
+.pricing-info{
+max-height: 56px;
+overflow: hidden;
+margin-bottom: 18px;
+}
+
+.pricing-tags{
+  transform: translateY(-0%);
 }
 
 .pricing-text {
