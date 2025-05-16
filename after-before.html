@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>After Before</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/after-before.css">
+</head>
+
+<body>
+    <main>
+        <section class="section-padding">
+            <div class="container">
+                <div class="container-effect">
+                    <div class="image-container">
+                        <img src="./images/royalty-free.png" alt="before" class="image-before slider-image">
+                        <img src="./images/royalty-free.png" alt="after" class="image-after slider-image">
+                    </div>
+                    <input type="range" min="0" max="100" value="50" class="slider">
+                    <div class="slider-line"></div>
+                    <div class="slider-btn" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-bar-both">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M8 12h-6" />
+                            <path d="M5 15l-3 -3l3 -3" />
+                            <path d="M22 12h-6" />
+                            <path d="M19 15l3 -3l-3 -3" />
+                            <path d="M12 4v16" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        const container = document.querySelector('.container-effect');
+        document.querySelector('.slider').addEventListener('input', (e) => {
+            container.style.setProperty('--position', `${e.target.value}%`);
+        })
+    </script>
+</body>
+
+</html>

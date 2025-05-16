@@ -23,7 +23,6 @@ body {
   padding-block: 150px;
 }
 
-
 /* From Uiverse.io by Yaya12085 */
 .switch {
   font-size: 17px;
@@ -97,21 +96,16 @@ input:checked + .slider:before {
 }
 
 .pricing-wrapper {
-  padding-top:80px;
+  padding-top: 80px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-.pricing-card-wrep {
-  position: relative;
-  z-index: 1;
-}
-
 .pricing-card {
   border: 1px solid #ebebeb;
   padding-inline: 20px;
-  padding-top: 80px;
+  padding-top: 30px;
   padding-bottom: 30px;
   border-radius: 20px;
   overflow: hidden;
@@ -147,52 +141,41 @@ input:checked + .slider:before {
   /* background-size: cover; */
 }
 
-.pricing-card-wrep:hover .pricing-card::after {
-  transform: scale(3);
-  opacity: 1;
-  visibility: visible;
+
+.pricing-setup {
+  transition:transform 0.5s ease-in-out ;
+  transform: translateY(-0%);
 }
 
-.pricing-card-wrep:hover .card-type,
-.pricing-card-wrep:hover .pricing-desc,
-.pricing-card-wrep:hover .pricing-list-item {
-  color: #ffffff;
+.show-yearly{
+  transform: translateY(-56%);
 }
 
-.pricing-card-wrep:hover .btn-primary {
-  background-color: #feea00;
-  color: #000;
-}
-
-.pricing-card-wrep:hover .btn-seconary::after {
-  background-color: #000;
+.pricing-teg-wreppr {
+  max-height: 40px;
+  overflow: hidden;
+  margin-bottom: 15px;
 }
 
 .pricing-tag {
-  position: absolute;
   z-index: 3;
-  top: -40px;
-  right: 20px;
-  background-color: #07cc74;
+  display: flex;
+  gap: 5px;
   color: #000000;
-  padding: 20px 20px 40px 20px;
-  border-radius: 8px;
+  margin-bottom: 10px;
   text-align: center;
   width: fit-content;
   transition: clip-path 0.5s ease-in-out;
-  clip-path: polygon(0 0, 100% 0, 100% 69%, 50% 100%, 0 69%);
-}
-
-.pricing-card-wrep:hover .pricing-tag {
-  clip-path: polygon(0 0, 100% 0, 100% 69%, 50% 100%, 0 69%);
 }
 
 .pricing-number {
-  font-size: 30px;
+  font-size: 40px;
+  line-height: 1;
   transition: color 0.5s ease-in-out;
 }
 
 .pricing-life {
+  align-self: flex-end;
   font-size: 18px;
 }
 
@@ -202,7 +185,6 @@ input:checked + .slider:before {
   padding: 12px 12px;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  margin-bottom: 10px;
 }
 
 .card-type-icon img {
@@ -215,6 +197,7 @@ input:checked + .slider:before {
   display: flex;
   gap: 10px;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .card-type {
@@ -222,16 +205,18 @@ input:checked + .slider:before {
   transition: color 0.5s ease-in-out;
   font-weight: 600;
   font-size: 24px;
-  margin-bottom: 12px;
 }
-
 
 .pricing-desc p {
   transition: color 0.5s ease-in-out;
 }
 
-.yearly{
+.yearly {
   display: none;
+}
+
+.btn-top-auto{
+  margin-top: auto;
 }
 
 .btn-primary,
@@ -280,7 +265,7 @@ input:checked + .slider:before {
   margin-bottom: 24px;
 }
 
-.pricing-card-btn{
+.pricing-card-btn {
   margin-top: auto;
 }
 
@@ -331,14 +316,13 @@ input:checked + .slider:before {
 @media (max-width: 1023px) {
   .pricing-wrapper {
     grid-template-columns: repeat(2, 1fr);
-    row-gap:80px;
+    row-gap: 80px;
   }
+
   .pricing-tag {
     top: -22px;
   }
-  .pricing-number {
-    font-size: 22px;
-  }
+
   .pricing-life {
     font-size: 14px;
   }
