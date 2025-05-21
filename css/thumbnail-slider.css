@@ -27,6 +27,7 @@
     background-size: cover;
     height: 100vh !important;
     background-repeat: no-repeat;
+    background-position: center;
   }
 
   .thumbnail-main-content{
@@ -36,7 +37,6 @@
   }
 
   .thumbnail-info{
-    align-self: center;
     max-width: 600px;
     height: fit-content;
   }
@@ -62,6 +62,7 @@
   }
 
   .thumbnail-wrapper{
+    max-width: 600px;
     position: absolute;
     bottom: 10%;
     right: 0;
@@ -88,8 +89,6 @@
 overflow: hidden;
  }
 
-
-
  .custom-arrows{
   position: absolute;
   z-index: 5;
@@ -115,3 +114,30 @@ overflow: hidden;
   width: 20px;
   display: inline-block;
  }
+@media (max-width:676px) {
+  body {
+    font-family: "Outfit", sans-serif;
+    font-size: 16px;
+  }
+
+  .sec-title{
+    margin-bottom: 14px;
+    line-height: 1;
+    font-size: 40px;
+  }
+  
+  .thumbnail-main-content{
+    min-height: 100vh;
+    display: flex;
+ align-items: center;
+ /* padding-top: 134px; */
+  }
+
+  .thumbnail-wrapper {
+    max-width: 254px;
+  }
+
+  .content-img {
+    height: 90px;
+}
+}
