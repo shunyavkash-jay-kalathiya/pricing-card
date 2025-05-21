@@ -19,14 +19,56 @@ body {
   margin-inline: auto;
 }
 
-.logo-slider-sec {
-  padding-block: 100px;
+.logo-slider-sec{
+/* border-block: 1px solid rgb(224, 224, 224); */
+  padding-block: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+background-color: #ffffff;
+box-shadow:rgba(0, 0, 0, 0.15) 0px 2px 8px;;
 }
 
 .logo-slider {
-  border-bottom: 1px solid #000000;
-  border-top: 1px solid #000000;
-  padding-block: 20px;
+  width: 45%;
+  height: 100%;
+  border-inline:1px solid rgb(224, 224, 224);
+  padding-block: 0px;
+}
+
+.logo-wrapper{
+  width:10%;
+  color: white;
+  padding-inline: 10px;
+}
+
+.slider-logo-img {
+  width: 100%;
+  aspect-ratio: 1/1; /* Keeps the container square */
+  display: flex;
+  height: fit-content;
+  max-height: 30px;
+}
+
+.slider-logo-img img {
+  width:100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* .compny-logo{
+  height: 40px;
+} */
+
+.compny-logo img{
+  width: 100%;
+  height: 100%;
+}
+
+.logo-slider-sec-2{
+  margin-bottom: 50px;
+  padding-block: 100px;
 }
 
 .slide-logo img {
@@ -103,4 +145,29 @@ body {
   margin-bottom: 0px;
   border-block: 1px solid;
 
+}
+
+@media (max-width:1023px) {
+  .logo-slider {
+    width: 41%;
+  }
+  
+  .logo-wrapper{
+    width:18%;
+  }
+}
+
+@media (max-width:639px) {
+  .logo-slider-sec{
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .logo-slider {
+    width: 100%;
+  }
+  
+  .logo-wrapper{
+    display: none;
+  }
 }
