@@ -99,20 +99,22 @@ input:checked + .slider:before {
   position: relative;
 }
 
-.switch-tag span{
-  position: absolute;
-  top: -40px;
-  left: 120%;
-  width: fit-content;
-  white-space: nowrap;
-  display: block;
-  line-height: 1;
-  padding: 6px;
-  color: #fff;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  background-color: #07cc74;
+.switch-tag span {
+    position: absolute;
+    font-size: 14px;
+    top: -40px;
+    left: 59%;
+    width: fit-content;
+    white-space: nowrap;
+    display: block;
+    line-height: 1;
+    padding: 6px;
+    color: #fff;
+    border-radius: 30px;
+    display: flex
+;
+    align-items: center;
+    background-color: #07cc74;
 }
 
 .switch-tag span::before{
@@ -122,6 +124,10 @@ input:checked + .slider:before {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  position: absolute;
+  transform: rotate(-34deg);
+  bottom: -12px;
+  left: -30px;
   width: 30px;
   height: 30px;
 }
@@ -335,7 +341,7 @@ input:checked + .slider:before {
 }
 
 .pricing-card.popular-pricing {
-  background-image: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+  background-image: linear-gradient(-199deg, #07cc73a1 33%, #57c0cc99 100%);
   border: #f1f8e8;
   
   border-style: dashed;

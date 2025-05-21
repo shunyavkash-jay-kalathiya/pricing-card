@@ -52,7 +52,8 @@ body {
   border-radius: 1rem;
   max-width: 800px;
   overflow: hidden;
-  max-height: 90vh;
+  /* max-height: 90vh; */
+  min-height: 100%;
   aspect-ratio: 1/1;
 }
 
@@ -92,17 +93,17 @@ body {
 
 .tab-link{
   cursor: pointer;
-  border-radius: 30px;
   transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
   padding: 14px 20px;
   text-align: center;
-  background-color: aquamarine;
+  background-color: rgb(231, 235, 219);
 }
 
 .tab-link.current{
   color: white;
   background-color: black;
 }
+
 .section-padding {
   padding-block: 100px;
 }
