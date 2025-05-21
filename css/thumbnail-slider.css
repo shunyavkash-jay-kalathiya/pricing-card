@@ -135,6 +135,7 @@ overflow: hidden;
 
   .thumbnail-wrapper {
     max-width: 254px;
+    bottom: 18%;
   }
 
   .content-img {
