@@ -47,7 +47,7 @@ body {
 .image-container {
   --position: 50%;
   display: none;
-  transition:all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   position: relative;
   border-radius: 1rem;
   max-width: 800px;
@@ -57,7 +57,7 @@ body {
   aspect-ratio: 1/1;
 }
 
-.image-container.current{
+.image-container.current {
   display: block;
 }
 
@@ -78,7 +78,7 @@ body {
   width: var(--position);
 }
 
-.image-after{
+.image-after {
   height: 100%;
 }
 
@@ -91,7 +91,7 @@ body {
   margin-block: 20px;
 }
 
-.tab-link{
+.tab-link {
   cursor: pointer;
   transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
   padding: 14px 20px;
@@ -99,7 +99,7 @@ body {
   background-color: rgb(231, 235, 219);
 }
 
-.tab-link.current{
+.tab-link.current {
   color: white;
   background-color: black;
 }
@@ -142,4 +142,16 @@ body {
   pointer-events: none;
   z-index: 10;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.418);
+}
+
+.tab-link.add-image-btn{
+  background-image:url(../images/after-before/Photoroom-2.png);
+  background-color: transparent;
+  color: white;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 100%;
 }
