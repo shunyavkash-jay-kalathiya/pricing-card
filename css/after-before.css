@@ -12,7 +12,7 @@ body {
   color: #191e26b3;
 }
 
-.only {
+.place-content {
   align-self: center;
 }
 
@@ -96,7 +96,7 @@ body {
   transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
   padding: 14px 20px;
   text-align: center;
-  background-color: rgb(231, 235, 219);
+  background-color: #e7ebdb;
 }
 
 .tab-link.current {
@@ -145,7 +145,7 @@ body {
 }
 
 .tab-link.add-image-btn{
-  background-image:url(../images/after-before/Photoroom-2.png);
+  /* background-image:url(../images/after-before/Photoroom-2.png); */
   background-color: transparent;
   color: white;
   border-radius: 10px;

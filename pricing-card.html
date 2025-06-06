@@ -13,8 +13,8 @@
 
 <body>
     <main>
-        <section class="sec-padding">
-            <div class="container">
+        
+            <div class="container sec-padding">
                 <form>
                     <div class="switch-content">
                         <label class="switch-tag" for="switch">Monthly</label>
@@ -67,8 +67,8 @@
                         <a href="#" class="btn-primary btn-top-auto">Start 7-day free trial</a>
                     </div>
 
-                    <div class="pricing-card popular-pricing">
-                        <h4 class="popular-teg">Popular</h4>
+                    <div class="pricing-card flexible-popular-pricing">
+                        <h4 class="flexible-popular-teg">Popular</h4>
                         <div class="card-type-wrepr">
                             <div class="card-type-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"  x="0" y="0" viewBox="0 0 512 512" xml:space="preserve" >
@@ -146,33 +146,31 @@
                         <a href="#" class="btn-primary btn-top-auto">Start 7-day free trial</a>
                     </div>
                 </div>
-        </section>
+             </div>
 
         <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const switches = document.querySelectorAll(".switch-box");
+    document.addEventListener("DOMContentLoaded", function () {
+        const switchBox = document.querySelector(".switch-box");
+        const pricingWrapper = document.querySelector(".pricing-wrapper");
 
-                switches.forEach((switchBox) => {
-                    const section = switchBox.closest("section");
-
-                    function togglePricing() {
-                        const pricingSetups = section.querySelectorAll(".pricing-setup");
-                        pricingSetups.forEach(setup => {
-                            if (switchBox.checked) {
-                                setup.classList.remove("show-yearly");
-                            } else {
-                                setup.classList.add("show-yearly");
-                            }
-                        });
-                    }
-
-                    // Initialize state
-                    togglePricing();
-
-                    // Listen for toggle changes
-                    switchBox.addEventListener("change", togglePricing);
-                });
+        function togglePricing() {
+            const pricingSetups = pricingWrapper.querySelectorAll(".pricing-setup");
+            pricingSetups.forEach(setup => {
+                if (switchBox.checked) {
+                    setup.classList.remove("show-yearly"); // Monthly selected
+                } else {
+                    setup.classList.add("show-yearly"); // Yearly selected
+                }
             });
+        }
+
+        // Initialize state
+        togglePricing();
+
+        // Listen for toggle changes
+        switchBox.addEventListener("change", togglePricing);
+    });
+
         </script>
         
         
