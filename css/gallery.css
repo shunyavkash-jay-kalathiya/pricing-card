@@ -26,7 +26,6 @@
 }
 
 .gallery-btn.active {
-  cursor: not-allowed;
   background-color: rgb(186, 245, 128);
 }
 
