@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+<link rel="stylesheet" href="./css/gallery-demo.css" rel="stylesheet">
+<title>gallery demo</title>
+</head>
+
+<body>
+<section>
+<div class="btn-group" >
+    <button class="filter-btn active" data-filter="*">All</button>
+    <button class="filter-btn" data-filter=".mountains">Mountains</button>
+    <button class="filter-btn" data-filter=".cars">Cars</button>
+    <button class="filter-btn" data-filter=".desert">Desert</button>
+</div>
+
+<div class="filter-grid">
+    <a  href="./images/after-before/Paint-car-1.png" data-fancybox="gallery" data-caption="Caption Images 1" class="filter-item mountains">
+        <img src="./images/after-before/Paint-car-1.png" alt="Desert">
+    </a>
+
+    <a  href="./images/mountent.png" data-fancybox="gallery" data-caption="Caption Images 2" class="filter-item cars">
+        <img src="./images/mountent.png" alt="Ocean">
+    </a>
+
+    <a  href="./images/mountent-3.png" data-fancybox="gallery" data-caption="Caption Images 3" class="filter-item desert">
+        <img src="./images/mountent-3.png" alt="Mountains">
+    </a>
+
+    <a  href="./images//mountent-2.png" data-fancybox="gallery" data-caption="Caption Images 4" class="filter-item mountains">
+        <img src="./images//mountent-2.png" alt="Desert">
+    </a>
+
+    <a  href="./images/mountain-covered.jpg" data-fancybox="gallery" data-caption="Caption Images 6" class="filter-item cars">
+        <img src="./images/mountain-covered.jpg" alt="Ocean">
+    </a>
+
+    <a href="./images/royalty-free.png" data-fancybox="gallery" data-caption="Caption Images 7"  class="filter-item desert">
+        <img src="./images/royalty-free.png" alt="Mountains">
+    </a>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.js" integrity="sha512-Kxd7ZcHvu2pUya3op2MKuD5Zmmad9B8xU2ze6pN4POLlXWihMRjzgPFp/V3jW4EpzSKBZ3r5WfNUbZxiD0ZiAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+$(function () {
+    var filterList = {
+        init: function () {
+            $('.filter-grid').mixItUp({
+                selectors: {
+                    target: '.filter-item',
+                    filter: '.filter-btn'
+                },
+                load: {
+                    filter: '*'
+                }
+            });
+        }
+    };
+    filterList.init();
+});
+</script>
+
+</body>
+
+</html>

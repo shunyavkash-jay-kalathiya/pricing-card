@@ -9,16 +9,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/pricing-card.css">
+    <style>
+        .click-box {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.range-slider {
+  width: 300px;
+  display: block;
+  margin-top: 10px;
+}
+
+    </style>
 </head>
 
 <body>
     <main>
         
-            <div class="container sec-padding">
+            <!-- <div class="container sec-padding">
                 <form>
                     <div class="switch-content">
                         <label class="switch-tag" for="switch">Monthly</label>
-                        <label class="switch">
+                        <label class="switch-boxswitch-box">
                             <input type="checkbox" class="switch-box"  id="switch">
                             <span class="slider"></span>
                         </label>
@@ -146,8 +164,11 @@
                         <a href="#" class="btn-primary btn-top-auto">Start 7-day free trial</a>
                     </div>
                 </div>
-             </div>
-
+             </div> -->
+            <div class="click-box">Click Me to Set 100%</div>
+            <input type="range" min="0" max="100" value="50" class="range-slider" id="myRange">
+            <span id="rangeValue">50%</span>
+             label
         <script>
     document.addEventListener("DOMContentLoaded", function () {
         const switchBox = document.querySelector(".switch-box");
@@ -172,7 +193,22 @@
     });
 
         </script>
-        
+        <script>
+            const clickBox = document.querySelector('.click-box');
+            const rangeSlider = document.getElementById('myRange');
+            const rangeValue = document.getElementById('rangeValue');
+
+            clickBox.addEventListener('click', () => {
+                rangeSlider.value = 100;
+                rangeValue.textContent = '100%';
+            });
+
+            // Update value live
+            rangeSlider.addEventListener('input', () => {
+                rangeValue.textContent = rangeSlider.value + '%';
+            });
+        </script>
+          
         
 
     </main>

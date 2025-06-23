@@ -1,74 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+/* =======================================
+General Styling
+======================================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.container {
-  max-width: 1320px;
-  width: 100%;
-  padding-inline: 20px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 50px;
+body {
+  background-color: #111;
+  font-family: 'Inter', sans-serif;
 }
 
-.gallery-filter {
+img {
+  width: 100%;
+}
+
+.filter-section {
+  padding: 30px 60px;
+  transition: 1.3s;
+}
+
+.controls ul {
   text-align: center;
 }
 
-.gallery-btn {
-  border: none;
+.controls ul li {
+  color: #f1f1f1;
+  opacity: .7;
+  background: transparent;
+  display: inline;
+  padding: 12px 16px;
+  margin: 0 5px;
   cursor: pointer;
-  border-radius: 5px;
-  background-color: rgb(0, 247, 255);
-  padding: 10px 15px;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.gallery-btn.active {
-  background-color: rgb(186, 245, 128);
+.controls ul li:hover,
+.controls ul li.active {
+  text-decoration: underline solid white 2px;
+  text-underline-offset: 0.5rem;
+  opacity: 1;
 }
 
-.gallery-item {
-  display: block;
+.clearfix:after {
+  display: table;
+  content: " ";
+  clear: both;
 }
 
-.gallery-content {
-  /* overflow: hidden; */
-  column-count: 3;
-  gap: 10px;
-  margin-top: 30px;
-  height: 100% !important;
+.item-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+
 }
 
-.gallery-item-wrapper,
-.grid-sizer {
+.item-grid .item {
   display: none;
-  width: 100%;
-  transition: all 0.4s ease-in-out;
 }
 
-.gallery-item {
-  display: block;
-  height: 100%;
-  width: 100%;
-  transition: all 0.4s ease-in-out;
-}
-
-.gallery-item img {
-  display: block;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-@media (max-width: 1023px) {
-  .gallery-content {
-    column-count: 2;
+/* Media Queries */
+@media (max-width: 768px) {
+  .item-grid {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
-@media (max-width: 639px) {
-  .gallery-content {
-    column-count: 1;
+
+@media  (max-width: 991px) {
+  .item-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

@@ -27,12 +27,12 @@
                             </p>
                         </div>
                         <ul class="tab-list">
-                            <li class="tab-link " data-tab="tab-1" style=" background-image:url(..)">Interior Clean</li>
+                            <li class="tab-link " data-tab="tab-1" >Interior Clean</li>
                             <li class="tab-link" data-tab="tab-3">Engine Wash</li>
                             <li class="tab-link" data-tab="tab-2">Exterior Polish</li>
                             <li class="tab-link" data-tab="tab-4">Paint Correction</li>
                             <li class="tab-link" data-tab="tab-1">Interior Clean</li>
-                            <li class="tab-link add-image-btn" data-tab="tab-3" style="background-image:url(./images/after-before/photoroom-2.png);">Engine Wash</li>
+                            <li class="tab-link " data-tab="tab-3">Engine Wash</li>
                             <li class="tab-link " data-tab="tab-2">Exterior Polish</li>
                             <li class="tab-link " data-tab="tab-4">Paint Correction</li>
                         </ul>
@@ -271,7 +271,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
     </script>
-    <script>
+    <!-- <script>
         const containers = document.querySelectorAll('.image-container');
         const sliders = document.querySelectorAll('.slider');
 
@@ -282,7 +282,31 @@ document.addEventListener("DOMContentLoaded", function () {
                 container.style.setProperty('--position', `${e.target.value}%`);
             });
         });
+    </script> -->
+    <script>
+        const containers = document.querySelectorAll('.image-container');
+        const sliders = document.querySelectorAll('.slider');
+
+        sliders.forEach((slider, index) => {
+            const container = containers[index];
+
+            slider.addEventListener('input', (e) => {
+                container.style.setProperty('--position', `${e.target.value}%`);
+            });
+
+            container.addEventListener('mousemove', (e) => {
+                const rect = container.getBoundingClientRect();
+                const offsetX = e.clientX - rect.left;
+                const percentage = (offsetX / rect.width) * 100;
+
+                const clamped = Math.min(100, Math.max(0, percentage));
+
+                slider.value = clamped;
+                container.style.setProperty('--position', `${clamped}%`);
+            });
+        });
     </script>
+    
 
 
 </body>

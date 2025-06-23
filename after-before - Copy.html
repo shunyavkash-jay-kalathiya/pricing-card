@@ -3,64 +3,138 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>After Before</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/after-before - Copy.css">
+    <title>Before-After Slider with Thumb</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #111;
+            font-family: sans-serif;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 700px;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            border-radius: 10px;
+            --position: 50%;
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .after-img,
+        .before-img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+        }
+
+        .before-img {
+            z-index: 2;
+            clip-path: polygon(0 0, var(--position) 0, var(--position) 100%, 0 100%);
+        }
+
+        /* Custom slider thumb */
+        .slider-thumb {
+            position: absolute;
+            top: 50%;
+            left: var(--position);
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 0 0 3px #000;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        /* Range input */
+        input[type="range"] {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            z-index: 4;
+            -webkit-appearance: none;
+            background: transparent;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 0;
+            width: 0;
+        }
+
+        input[type="range"]::-webkit-slider-runnable-track {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 3px;
+        }
+
+        /* Optional: labels */
+        .label-left,
+        .label-right {
+            position: absolute;
+            top: 10px;
+            padding: 6px 12px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            font-size: 14px;
+            border-radius: 4px;
+            z-index: 5;
+        }
+
+        .label-left {
+            left: 10px;
+        }
+
+        .label-right {
+            right: 10px;
+        }
+    </style>
 </head>
 
 <body>
-    <main>
-        <section class="section-padding">
-            <div class="container">
-                <div class="image-container">
-                    <div class="image-before">
-                        <div class="image-content">
-                            <h3 class="card-title">Lorem ipsum dolor sit amet, consectetur adipisicing.</h3>
-                            <div class="richtext img-desc">
-                                <p> consectetur adipisicing elit. Recusandae voluptatum alias officiis maiores !</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="image-after">
-                        <div class="image-content">
-                            <h3 class="card-title">dolor sit amet, consectetur Lorem ipsum dolor sit, amet consectetur adipisicing elit. </h3>
-                            <div class="richtext img-desc">
-                                <p>lore
-                                    consectetur adipisicing elit. Recusandae voluptatum alias officiis maiores !</p>
-                            </div>
-                        </div>
-                    </div>
-                    <input type="range" min="0" max="100" value="50" class="slider">
-                    <div class="slider-line"></div>
-                    <div class="slider-btn" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-bar-both">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M8 12h-6" />
-                            <path d="M5 15l-3 -3l3 -3" />
-                            <path d="M22 12h-6" />
-                            <path d="M19 15l3 -3l-3 -3" />
-                            <path d="M12 4v16" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-    </main>
+    <div class="slider-container" id="sliderBox">
+        <div class="image-wrapper">
+            <img src="./images/after-before/Paint-car-1.png" class="after-img" alt="After" />
+            <img src="./images/after-before/Paint-car-2.png" class="before-img" alt="Before" />
+        </div>
+        <div class="slider-thumb" id="thumb"></div>
+        <div class="label-left">Before</div>
+        <div class="label-right">After</div>
+        <input type="range" min="0" max="100" value="50" id="sliderInput" />
+    </div>
+
     <script>
-        const containers = document.querySelectorAll('.image-container');
-        const sliders = document.querySelectorAll('.slider');
+        const sliderInput = document.getElementById("sliderInput");
+        const sliderBox = document.getElementById("sliderBox");
 
-        sliders.forEach((slider, index) => {
-            const container = containers[index];
+        function updateSlider() {
+            const value = sliderInput.value;
+            sliderBox.style.setProperty('--position', `${value}%`);
+        }
 
-            slider.addEventListener('input', (e) => {
-                container.style.setProperty('--position', `${e.target.value}%`);
-            });
-        });
+        sliderInput.addEventListener("input", updateSlider);
+        updateSlider(); // set initial value
     </script>
 
 </body>

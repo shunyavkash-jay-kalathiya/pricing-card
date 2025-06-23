@@ -72,7 +72,7 @@ body {
   transition: 0.4s;
 }
 
-input:checked + .slider {
+input:checked + .slider { 
   background-color: #07cc74;
   border: 1px solid #07cc74;
 }
@@ -82,7 +82,7 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(1.4em);
+  transform: translateX(calc(100% - 20px));
   background-color: #fff;
 }
 
@@ -406,5 +406,22 @@ input:checked + .slider:before {
 @media (max-width: 639px) {
   .pricing-wrapper {
     grid-template-columns: repeat(1, 1fr);
+    margin-left: auto;
+    margin-right: auto;
+   
   }
+
 }
+.flexible-price-card::after{
+content: "";
+background-color: #00000027;
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+z-index: -1;
+backdrop-filter: ;
+}
+
+

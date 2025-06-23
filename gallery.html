@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,85 +8,77 @@
     <link rel="stylesheet" href="./css/gallery.css" rel="stylesheet">
     <title>gallery</title>
 </head>
+
 <body>
-    <section>
-        <div class="container">
-            <div class="gallery-filter">
-                <button data-filter="*" class="gallery-btn is-checked">All</button>
-                <button data-filter=".nature" class="gallery-btn">Nature</button>
-                <button data-filter=".architecture" class="gallery-btn">Architecture</button>
-            </div>
-            <div class="gallery-content">
-                <div class="gallery-item-wrapper nature">
-                    <a href="./images/mountain-covered.jpg" class="gallery-item " data-fancybox="gallery" data-caption="Caption#1">
-                        <img src="./images/mountain-covered.jpg" alt="Gallery Image">
-                    </a>
-                </div>
-                <div class="gallery-item-wrapper architecture">
-                    <a href="./images/mountent-2.png" class="gallery-item " data-fancybox="gallery" data-caption="Caption#4">
-                        <img src="./images/mountent-2.png" alt="Gallery Image">
-                    </a>
-                </div>
-                <div class="gallery-item-wrapper nature">
-                    <a href="./images/mountent-3.png" class="gallery-item "  data-fancybox="gallery" data-caption="Caption#2">
-                        <img src="./images/mountent-3.png" alt="Gallery Image">
-                    </a>
-                </div>
-                <div class="gallery-item-wrapper architecture">
-                    <a href="./images/royalty-free.png" class="gallery-item" data-fancybox="gallery" data-caption="Caption#3">
-                        <img src="./images/royalty-free.png"  alt="Gallery Image">
-                    </a>
-                </div>
-                <div class="gallery-item-wrapper nature">
-                    <a href="./images/cta/template-img.png" class="gallery-item "  data-fancybox="gallery" data-caption="Caption#2">
-                        <img src="./images/cta/template-img.png" alt="Gallery Image">
-                    </a>
-                </div>
-                <div class="gallery-item-wrapper architecture">
-                    <a href="https://picsum.photos/400/300?random=6" class="gallery-item" data-fancybox="gallery" data-caption="Caption#3">
-                        <img src="./images/mountain-covered.jpg" alt="Gallery Image">
-                    </a>
-                </div>
-                <div class="gallery-item-wrapper nature">
-                    <a href="images/vertical-shot.jpg" class="gallery-item"  data-fancybox="gallery" data-caption="Caption#2">
-                        <img src="./images/vertical-shot.jpg" alt="Gallery Image">
-                    </a>
-                </div>
-                <div class="gallery-item-wrapper architecture">
-                    <a href="https://picsum.photos/400/300?random=8" class="gallery-item " data-fancybox="gallery" data-caption="Caption#3">
-                        <img src="./images/mountain-covered.jpg" alt="Gallery Image">
-                    </a>
-                </div>
-            </div>
+    <section class="filter-section">
+    
+        <!-- Filter Controls !-->
+        <div class="controls">
+            <ul id="filters" class="clearfix">
+                <li class="filter active" data-filter="all">All</li>
+                <li class="filter" data-filter=".mountains">Mountains</li>
+                <li class="filter" data-filter=".ocean">Ocean</li>
+                <li class="filter" data-filter=".desert">Desert</li>
+            </ul>
         </div>
-    </section>
+    
+        <!-- Filter Grid !-->
+        <div class="item-grid">
+            <!-- Item 1 !-->
+            <div class="item mountains">
+                <img src="./images/royalty-free.png" alt="Mountains">
+            </div>
+            <!-- Item 2 !-->
+            <div class="item ocean">
+                <img src="./images/mountain-covered.jpg" alt="Ocean">
+            </div>
+            <!-- Item 3 !-->
+            <div class="item desert">
+                <img src="./images//mountent-2.png" alt="Desert">
+            </div>
+            <!-- Item 1 !-->
+            <div class="item mountains">
+                <img src="./images/mountent-3.png" alt="Mountains">
+            </div>
+            <!-- Item 2 !-->
+            <div class="item ocean">
+                <img src="./images/mountent.png" alt="Ocean">
+            </div>
+            <!-- Item 3 !-->
+            <div class="item desert">
+                <img src="./images/after-before/Paint-car-1.png" alt="Desert">
+            </div>
+    
+        </div>
+    
+        </section>
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.js" integrity="sha512-Kxd7ZcHvu2pUya3op2MKuD5Zmmad9B8xU2ze6pN4POLlXWihMRjzgPFp/V3jW4EpzSKBZ3r5WfNUbZxiD0ZiAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.js" integrity="sha512-Kxd7ZcHvu2pUya3op2MKuD5Zmmad9B8xU2ze6pN4POLlXWihMRjzgPFp/V3jW4EpzSKBZ3r5WfNUbZxiD0ZiAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
-    // Don't forget the CDNjs!
-    $(function () {
-        var filterList = {
-            init: function () {
-                // MixItUp plugin
-                // http://mixitup.io
-                $('.gallery-content').mixItUp({
-                    selectors: {
-                        target: '.gallery-item-wrapper',
-                        filter: '.gallery-btn'
-                    },
-                    load: {
-                        filter: '*' // show app tab on first load
+  
+            $(function () {
+                var filterList = {
+                    init: function () {
+                      
+                        $('.item-grid').mixItUp({
+                            selectors: {
+                                target: '.item',
+                                filter: '.filter'
+                            },
+                            load: {
+                                filter: 'all' 
+                            }
+                        });
                     }
-                });
-            }
-        };
-        // Run the show!
-        filterList.init();
-    });
+                };
+
+                filterList.init();
+            });
     </script>
 
 </body>
+
 </html>
