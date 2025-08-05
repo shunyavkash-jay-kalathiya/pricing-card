@@ -27,7 +27,7 @@
                             </p>
                         </div>
                         <ul class="tab-list">
-                            <li class="tab-link " data-tab="tab-1" >Interior Clean</li>
+                            <li class="tab-link " data-tab="tab-1">Interior Clean</li>
                             <li class="tab-link" data-tab="tab-3">Engine Wash</li>
                             <li class="tab-link" data-tab="tab-2">Exterior Polish</li>
                             <li class="tab-link" data-tab="tab-4">Paint Correction</li>
@@ -134,7 +134,7 @@
                             </p>
                         </div>
                         <ul class="tab-list">
-                            <li class="tab-link" data-tab="tab-1" >Interior Clean</li>
+                            <li class="tab-link" data-tab="tab-1">Interior Clean</li>
                             <li class="tab-link" data-tab="tab-3">Engine Wash</li>
                             <li class="tab-link" data-tab="tab-2">Exterior Polish</li>
                             <li class="tab-link" data-tab="tab-4">Paint Correction</li>
@@ -227,48 +227,49 @@
                 </div>
             </div>
         </section>
+        <label for=""></label>
     </main>
     <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll(".img-wrep");
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll(".img-wrep");
 
-    sections.forEach(section => {
-        const tabs = section.querySelectorAll("ul.tab-list li");
-        const contents = section.querySelectorAll(".image-container");
+            sections.forEach(section => {
+                const tabs = section.querySelectorAll("ul.tab-list li");
+                const contents = section.querySelectorAll(".image-container");
 
-        // Set first tab and content as current
-        if (tabs.length > 0 && contents.length > 0) {
-            tabs[0].classList.add("current");
+                // Set first tab and content as current
+                if (tabs.length > 0 && contents.length > 0) {
+                    tabs[0].classList.add("current");
 
-            const firstTabId = tabs[0].getAttribute("data-tab");
-            contents.forEach(content => {
-                if (content.id === firstTabId) {
-                    content.classList.add("current");
+                    const firstTabId = tabs[0].getAttribute("data-tab");
+                    contents.forEach(content => {
+                        if (content.id === firstTabId) {
+                            content.classList.add("current");
+                        }
+                    });
                 }
-            });
-        }
 
-        tabs.forEach(tab => {
-            tab.addEventListener("click", function () {
-                const tabId = this.getAttribute("data-tab");
+                tabs.forEach(tab => {
+                    tab.addEventListener("click", function () {
+                        const tabId = this.getAttribute("data-tab");
 
-                // Remove current class from all tabs and content in this section
-                tabs.forEach(t => t.classList.remove("current"));
-                contents.forEach(c => c.classList.remove("current"));
+                        // Remove current class from all tabs and content in this section
+                        tabs.forEach(t => t.classList.remove("current"));
+                        contents.forEach(c => c.classList.remove("current"));
 
-                // Add current to clicked tab
-                this.classList.add("current");
+                        // Add current to clicked tab
+                        this.classList.add("current");
 
-                // Activate the corresponding image container within the same section
-                contents.forEach(content => {
-                    if (content.id === tabId) {
-                        content.classList.add("current");
-                    }
+                        // Activate the corresponding image container within the same section
+                        contents.forEach(content => {
+                            if (content.id === tabId) {
+                                content.classList.add("current");
+                            }
+                        });
+                    });
                 });
             });
         });
-    });
-});
 
     </script>
     <!-- <script>
@@ -306,9 +307,286 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     </script>
-    
-
-
 </body>
 
 </html>
+
+<!--
+{% require_css %}
+  <style>
+    {% scope_css %}
+  .before-vs-after-showcase-wrapper {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  .before-vs-after-showcase-content {
+    align-self: center;
+    order: {{ module.make_a_revers_column ? 1 : 2 }};
+  }
+
+  .before-vs-after-showcase-title {
+    {{ module.style.font_family.heading_font_family.css}}
+    line-height: 1;
+    {% if module.style.element_bottom_spacing.heading_bottom_spacing  %}margin-bottom: {{ module.style.element_bottom_spacing.heading_bottom_spacing + 'px' }};{% endif %}
+  }
+
+  {% if module.style.element_bottom_spacing.richtext_bottom_spacing %}
+    .before-vs-after-showcase-richtext.richtext {
+      margin-bottom: {{ module.style.element_bottom_spacing.richtext_bottom_spacing + 'px' }};
+    }
+  {% endif %}
+
+    {% if module.style.font_family.richtext_font_family.color %}
+       .before-vs-after-showcase-richtext.richtext *{
+        color: {{ module.style.font_family.richtext_font_family.color }};
+       }
+    {% endif %}
+
+    {% if module.style.font_family.richtext_font_family.css %}
+        .before-vs-after-showcase-richtext.richtext *:not(h1,h2,h3,h4,h5,h6) {
+          {{ module.style.font_family.richtext_font_family.css }}
+        }
+    {% endif %}
+
+  .before-vs-after-showcase-tabs {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0px, 1fr));
+    {% if module.style.gap_between_tab %} gap:{{ module.style.gap_between_tab + 'px' }}; {% endif %}
+    {% if module.style.element_bottom_spacing.tab_bottom_spacing %}margin-bottom:{{ module.style.element_bottom_spacing.tab_bottom_spacing + 'px' }};{% endif %}
+    padding: 0;
+  }
+
+  .before-vs-after-showcase-tab {
+    cursor: pointer;
+    {{ module.style.tab_setting.tab_spacing.css }}
+    text-align: center;
+    {{ module.style.tab_setting.tab_border.css }}
+    border-radius:{{ module.style.tab_setting.round_corner + 'px' }};
+    background-color:{{ module.style.tab_setting.tab_background.css }};
+    transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out , transform 0.5s;
+    {{ module.style.font_family.tab_font_family.css }}
+  }
+
+  .before-vs-after-showcase-tab:hover {
+    color:{{ module.style.tab_setting.hover.tab_label_hover_color.css }};
+    background-color:{{ module.style.tab_setting.hover.tab_hover_background.css }};
+    {{ module.style.tab_setting.hover.tab_hover_border.css }}
+  }
+
+  .before-vs-after-showcase-tab.current {
+    color: {{ module.style.tab_setting.active_tab_color.tab_label_color.css }};
+    background-color: {{ module.style.tab_setting.active_tab_color.tab_background.css }};
+    {{ module.style.tab_setting.active_tab_color.tab_border.css }}
+  }
+
+  .before-vs-after-showcase-image-container {
+    display: none;
+    --position: 50%;
+    position: relative;
+    border-radius:{{ module.style.image_border_radius + 'px' }};
+    overflow: hidden;
+    max-width: 800px;
+    aspect-ratio: 1 / 1;
+    transition: all 0.5s ease-in-out;
+    order: {{ module.make_a_reverse_column ? 2 : 1 }};
+  }
+
+  .before-vs-after-showcase-image-container.current {
+    display: block;
+  }
+
+  .before-vs-after-showcase-before,
+  .before-vs-after-showcase-after {
+    position: absolute;
+    inset: 0;
+  }
+
+  .before-vs-after-showcase-before {
+    width: var(--position);
+    z-index: 2;
+    overflow: hidden;
+  }
+
+  .before-vs-after-showcase-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+    display: block;
+  }
+
+  .before-vs-after-showcase-slider {
+    position: absolute;
+    inset: 0;
+    z-index: 9;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .before-vs-after-showcase-slider-line {
+    position: absolute;
+    height: 100%;
+    width: 0.2rem;
+    background-color: white;
+    left: var(--position);
+    transform: translateX(-50%);
+    z-index: 7;
+    pointer-events: none;
+  }
+
+    
+  .before-vs-after-showcase-slider-btn {
+    position: absolute;
+    background-color: white;
+    padding: 16px;
+    border-radius: 50%;
+    top: 50%;
+    left: var(--position);
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    pointer-events: none;
+    display: grid;
+    place-items: center;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  }
+
+  @media only screen and (max-width: 767px) {
+    .before-vs-after-showcase-wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  {% end_scope_css %}
+</style>
+
+{% end_require_css %}
+
+
+<div class="before-vs-after-showcase">
+  <div class="before-vs-after-showcase-wrapper">
+    <section class="before-vs-after-showcase-content" aria-label="Image comparison section">
+      {% if module.heading %}
+      <h2 class="before-vs-after-showcase-title">{{ module.heading }}</h2>
+      {% endif %}
+
+      {% if module.richtext %}
+      <div class="before-vs-after-showcase-richtext richtext">
+        {{ module.richtext }}
+      </div>
+      {% endif %}
+
+      <ul class="before-vs-after-showcase-tabs" role="tablist">
+        {% for item in module.tabs_content %}
+        <li
+          class="before-vs-after-showcase-tab"
+          data-tab="tab-{{ loop.index }}"
+          role="tab"
+          id="tab-{{ loop.index }}-tab"
+          aria-controls="tab-{{ loop.index }}"
+          aria-selected="{{ loop.index == 1 ? 'true' : 'false' }}"
+          tabindex="{{ loop.index == 1 ? '0' : '-1' }}"
+        >
+          {{ item.tab_label }}
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    {% for item in module.tabs_content %}
+    <div
+         id="tab-{{ loop.index }}"
+         - class="before-vs-after-showcase-image-container {% if loop.index == 1 %} before-vs-after-item-one {% endif %}"
+         + class="before-vs-after-showcase-image-container {% if loop.index == 1 %}current before-vs-after-item-one{% endif %}"
+         role="tabpanel"
+         aria-labelledby="tab-{{ loop.index }}-tab"
+         {% if loop.index != 1 %}hidden{% endif %}
+         >      
+      {% if item.before_image.src %}
+      <div class="before-vs-after-showcase-before">
+        <img src="{{ item.before_image.src }}" alt="{{ item.before_image.alt || 'Before image' }}" loading="lazy" class="before-vs-after-showcase-image"/>
+      </div>
+      {% endif %}
+
+      {% if item.after_image.src %}
+      <div class="before-vs-after-showcase-after">
+        <img src="{{ item.after_image.src }}" alt="{{ item.after_image.alt || 'After image' }}" loading="lazy" class="before-vs-after-showcase-image"/>
+      </div>
+      {% endif %}
+
+      <input type="range" min="0" max="100" value="50" class="before-vs-after-showcase-slider" />
+      <div class="before-vs-after-showcase-slider-line"></div>
+      <div class="before-vs-after-showcase-slider-btn" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+             class="icon icon-tabler icon-tabler-arrow-bar-both">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M8 12h-6" />
+          <path d="M5 15l-3 -3l3 -3" />
+          <path d="M22 12h-6" />
+          <path d="M19 15l3 -3l-3 -3" />
+          <path d="M12 4v16" />
+        </svg>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".before-vs-after-showcase-wrapper").forEach(section => {
+      
+      const tabs = section.querySelectorAll(".before-vs-after-showcase-tab");
+      
+      const contents = section.querySelectorAll(".before-vs-after-showcase-image-container");
+
+      if (tabs.length && contents.length) {
+        tabs[0].classList.add("current");
+        contents[0].classList.add("current");
+        contents[0].removeAttribute("hidden");
+      }
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => {
+          const tabId = tab.dataset.tab;
+
+          tabs.forEach(t => {
+            t.classList.remove("current");
+            t.setAttribute("aria-selected", "false");
+            t.setAttribute("tabindex", "-1");
+          });
+
+          contents.forEach(c => {
+            c.classList.remove("current");
+            c.setAttribute("hidden", "true");
+          });
+
+          tab.classList.add("current");
+          tab.setAttribute("aria-selected", "true");
+          tab.setAttribute("tabindex", "0");
+
+          const activeContent = section.querySelector(`#${tabId}`);
+          if (activeContent) {
+            activeContent.classList.add("current");
+            activeContent.removeAttribute("hidden");
+          }
+        });
+      });
+    });
+
+    document.querySelectorAll(".before-vs-after-showcase-slider").forEach(slider => {
+      slider.addEventListener("input", e => {
+        const container = e.target.closest(".before-vs-after-showcase-image-container");
+        container.style.setProperty("--position", `${e.target.value}%`);
+      });
+    });
+  });
+</script>
+
+
+ -->
