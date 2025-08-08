@@ -617,3 +617,48 @@ thead{
   width: 25%;
 }
 
+.browser-support-box{
+  display: flex;
+  color: white;
+  padding: 20px 25px;
+  background-color: #27272a;
+  margin-bottom: 50px;
+  width: 70%;
+}
+
+.browser-box-title{
+  width: 50%;
+}
+
+.box-title{
+  color: #ffffff;
+}
+
+.browser-table{
+  width: 50%;
+}
+
+tr{
+  display: flex;
+  gap: 10px;
+}
+
+.browser-icon{
+  padding: 10px;
+  background-color: rgb(38, 38, 116);
+  border-radius: 30px;
+  width: 80px;
+  height: 40px;
+  padding: 5px;
+}
+
+.browser-icon span{
+  display: block;
+}
+
+.browser-icon span:first-child{
+  background-image: url(https://developer.mozilla.org/static/media/chrome.5e791c51c323fbb93c31.svg);
+background-size: cover;
+background-repeat: no-repeat;
+
+}
