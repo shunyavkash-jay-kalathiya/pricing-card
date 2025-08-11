@@ -283,3 +283,149 @@ header {
   align-items: center;
   gap: 16px;
 }
+
+/* --------------------//////////////////////////////////////------------------------- */
+body {
+  margin-top: 50px;
+}
+.browser-support-box {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  border-radius: 20px;
+  color: white;
+  padding: 20px 25px;
+  background-color: #27272a;
+  margin-bottom: 50px;
+  width: 70%;
+}
+
+.browser-box-title {
+  width: 100%;
+}
+
+.box-title {
+  color: #ffffff;
+}
+
+.browser-table {
+  width: fit-content;
+}
+
+.table-content {
+  border: 1px solid white;
+}
+
+.table-column {
+  padding: 5px;
+}
+.table-column:not(:last-child) {
+  border-right: 1px solid #696969;
+}
+tr {
+  display: flex;
+  border-radius: 10px;
+  border: 1px solid #696969;
+}
+
+.browser-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  border-radius: 30px;
+  width: 58px;
+  height: 36px;
+}
+
+.browser-icon span {
+  display: block;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 25px;
+  width: auto;
+  aspect-ratio: 1;
+}
+
+.browser-icon span:nth-child(1) {
+  z-index: 5;
+  margin-right: -5px;
+  background-image: url(https://developer.mozilla.org/static/media/chrome.5e791c51c323fbb93c31.svg);
+}
+
+.browser-icon span:nth-child(2) {
+  z-index: 4;
+  background-image: url(https://developer.mozilla.org/static/media/browser-check.d960a1037f7d1ffb1eec.svg);
+  border-radius: 50%;
+  background-size: 74%;
+}
+
+.not-support {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 79.301 98"><g fill="%23ea8600"><path fill-rule="evenodd" d="M30.3 6a42.823 42.823 0 0 0-26.616 9.226A59.307 59.307 0 0 0 0 10.489 48.786 48.786 0 0 1 30.3 0c27.063 0 49 21.938 49 49s-21.937 49-49 49A48.786 48.786 0 0 1 0 87.511a59.307 59.307 0 0 0 3.684-4.737A42.823 42.823 0 0 0 30.3 92c23.748 0 43-19.252 43-43S54.049 6 30.3 6Z" clip-rule="evenodd"/><path d="m38.633 48.5 9.667-9.667L43.467 34 33.8 43.667 24.134 34 19.3 38.834l9.666 9.666-9.666 9.666 4.833 4.833 9.666-9.666 9.666 9.666 4.834-4.833z"/></g></svg>');
+}
+
+.tooltip {
+  top: -130%;
+  white-space: nowrap;
+  position: absolute;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #000;
+  color: white;
+  width: fit-content;
+  z-index: 6;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.tooltip::after {
+  content: "";
+  display: block;
+  z-index: 5;
+  position: absolute;
+  width: 16px;
+  height: auto;
+  aspect-ratio: 1;
+  background-color: #000;
+  bottom: -7px;
+  transform: translate(-50%) rotate(45deg);
+  left: 50%;
+}
+
+.browser-icon:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 767px) {
+  .browser-support-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .box-title {
+    text-align: center;
+  }
+
+  tr {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 576px) {
+  .table-column {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+  }
+.table-column:nth-child(2n) {
+  border-right: 0px solid #696969;
+}
+  .table-column:not(:nth-last-child(-n+2)) {
+   border-bottom: 1px solid #696969;
+  }
+}
