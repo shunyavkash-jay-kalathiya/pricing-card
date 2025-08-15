@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fads</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/faqs.css">
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <!-- Main FAQ -->
+            <div class="faqs-wreppar">
+                <div class="faqs-question">
+                    <h3 class="faqs-title">
+                        Main FAQ - Lorem ipsum dolor sit amet
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                            </svg>
+                        </span>
+                    </h3>
+                </div>
+                <div class="faqs-answer">
+                    <div class="faqs-answer-inner">
+                        <p>This is the main FAQ answer. Below are related sub-questions:</p>
+
+                        <!-- Inner FAQ -->
+                        <div class="faqs-wreppar-inner">
+                            <div class="faqs-question-inner">
+                                <h3 class="faqs-title-inner">
+                                    Main FAQ - Lorem ipsum dolor sit amet
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                        </svg>
+                                    </span>
+                                </h3>
+                            </div>
+                            <div class="inside-faqs-answer">
+                                <div class="inside-faqs-answer-inner">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam nam ipsum cum fugit dolor sint odio quis doloremque quae, quam perspiciatis, accusantium esse fuga placeat deserunt saepe vitae corrupti aperiam.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faqs-wreppar-inner">
+                            <div class="faqs-question-inner">
+                                <h3 class="faqs-title-inner">
+                                    Main FAQ - Lorem ipsum dolor sit amet
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                        </svg>
+                                    </span>
+                                </h3>
+                            </div>
+                            <div class="inside-faqs-answer">
+                                <div class="inside-faqs-answer-inner">
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod impedit laborum itaque. Maiores esse ipsa hic cumque autem quis minima ducimus, temporibus culpa pariatur dolorem aliquid repellendus ut, doloremque laboriosam.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- End inner FAQ -->
+                    </div>
+                </div>
+            </div>
+            <div class="faqs-wreppar">
+                <div class="faqs-question">
+                    <h3 class="faqs-title">
+                        Main FAQ - Lorem ipsum dolor sit amet
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                            </svg>
+                        </span>
+                    </h3>
+                </div>
+                <div class="faqs-answer">
+                    <div class="faqs-answer-inner">
+                        <p>This is the main FAQ answer. Below are related sub-questions:</p>
+                        <!-- Inner FAQ -->
+                        <!-- End inner FAQ -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        document.querySelectorAll(".faqs-wreppar").forEach(faq => {
+            faq.querySelector(".faqs-question").addEventListener("click", () => {
+                faq.classList.toggle("active");
+            });
+        });
+
+        document.querySelectorAll(".faqs-wreppar-inner").forEach(faq => {
+            faq.querySelector(".faqs-question-inner").addEventListener("click", () => {
+                faq.classList.toggle("active");
+            });
+        });
+
+    </script>
+</body>
+
+</html>

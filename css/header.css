@@ -289,15 +289,17 @@ body {
   margin-top: 50px;
 }
 .browser-support-box {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-  border-radius: 20px;
-  color: white;
-  padding: 20px 25px;
-  background-color: #27272a;
-  margin-bottom: 50px;
-  width: 70%;
+display: flex;
+    gap: 15px;
+    /* border: 1px solid #696969; */
+    align-items: center;
+    color: white;
+    padding: 20px 25px;
+    background-color: #ffffff;
+    margin-bottom: 50px;
+    width: 70%;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+
 }
 
 .browser-box-title {
@@ -305,7 +307,7 @@ body {
 }
 
 .box-title {
-  color: #ffffff;
+  color: #000000;
 }
 
 .browser-table {
@@ -319,13 +321,14 @@ body {
 .table-column {
   padding: 5px;
 }
-.table-column:not(:last-child) {
-  border-right: 1px solid #696969;
+.table-column:not(:nth-child(even)) {
+  border-right: 1px solid #6969694e;
+  
 }
 tr {
   display: flex;
   border-radius: 10px;
-  border: 1px solid #696969;
+  border: 1px solid #6969694e;
 }
 
 .browser-icon {
@@ -423,9 +426,9 @@ tr {
     width: 50%;
   }
 .table-column:nth-child(2n) {
-  border-right: 0px solid #696969;
+  border-right: 0px solid #6969694e;
 }
   .table-column:not(:nth-last-child(-n+2)) {
-   border-bottom: 1px solid #696969;
+   border-bottom: 1px solid #6969694e;
   }
 }
